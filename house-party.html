@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Party Loyalty: House</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="./main.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-xl p-0 ">
+        <!-- navbar -->
+        <header class="header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top pt-2 pb-1">
+                <div class="container-fluid d-flex flex-lg-column justify-content-between align-items-start ">
+                    <div class="navbar-brand col-lg-12 d-flex flex-row justify-content-between">
+                        <div class="spacing d-flex align-items-center">
+                            <img class="img-fluid" src="./assets/img/icon2.png" width="50" alt="icon">
+                            <span class="h3">Data Insight Group</span>
+
+                        </div>
+                        <p class="d-none d-lg-block text-info pt-2"><a class="nav-link font-green"
+                                href="mailto:info@datainsightgroup.net"><img src="./assets/img/icon-mail.png"
+                                    alt="mail-icon" width="25" class="img-fluid me-2" />info@datainsightgroup.net</a>
+                        </p>
+                    </div>
+                    <button class="navbar-toggler bg-green text-light mt-1" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="bg-green rounded collapse navbar-collapse border border-2 border-dark col-lg-12"
+                        id="navbarTogglerDemo02">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex p-1">
+                            <li class="nav-item">
+                                <a class="nav-link lead" aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Congress 113
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="./house-data.html">House</a></li>
+                                    <li><a class="dropdown-item" href="./senate-data.html">Senate</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdownTwo"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Attendance
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="./house-attendance.html">House</a></li>
+                                    <li><a class="dropdown-item" href="./senate-attendance.html">Senate</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdownThree"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Party Loyalty
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdownThree">
+                                    <li><a class="dropdown-item active" href="#">House</a></li>
+                                    <li><a class="dropdown-item" href="./senate-party.html">Senate</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item d-lg-none">
+                                <a class="nav-link" href="#">info@datainsightgroup.net</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- space navbar -->
+            <div class="space-navbar">
+            </div>
+        </header>
+        <!-- main -->
+        <main class="main mb-lg-5 pb-lg-0 mb-5 pb-5 mt-lg-5 mt-3 pt-lg-2">
+            <div class="container-fluid row mx-0">
+                <div class="container-fluid col-lg-6 text-center text-lg-start pt-lg-5">
+                    <h2 class="mt-2">Party Loyalty</h2>
+                    <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans
+                        respectively, tend to be the most faithful in voting for their party's nominee for office and
+                        legislation that backs their party's agenda. </p>
+                </div>
+                <div class="table-responsive col-lg-6 pt-lg-4">
+                    <h4 class="text-lg-end text-center">Senate at a glance</h4>
+                    <table class="table table-dark text-center" id="table-one">
+                        <thead>
+                            <tr>
+                                <th>Party</th>
+                                <th>No. of Reps</th>
+                                <th>%Voted w/ Party</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-fluid row mx-0">
+                <div class="table-responsive col-lg-6 pt-lg-2">
+                    <h4 class="text-lg-end text-center">Least Loyal (Bottom 10% of Party)</h4>
+                    <table class="table table-dark text-center" id="table-less-loyal">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>No. Party Votes</th>
+                                <th>% Party Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive col-lg-6 pt-lg-2">
+                    <h4 class="text-lg-end text-center">Most Loyal (Top 10% of Party)</h4>
+                    <table class="table table-dark text-center" id="table-most-loyal">
+                        <thead>
+                            <tr>
+                                <th>Party</th>
+                                <th>No. Party Votes</th>
+                                <th>%Party Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-center d-lg-none">
+                    <a class="btn btn-primary bg-green-two mb-2" href="#" role="button">Go to Top</a>
+                </div>
+            </div>
+        </main>
+        <!-- footer -->
+        <footer class="footer fixed-bottom p-2 pe-3 bg-white pt-1">
+            <div
+                class="bg-green mx-1 rounded container-fluid text-center border border-2 border-dark d-flex justify-content-center align-items-center p-2">
+                <span class="lead">
+                    Ⓒ 2022 Data Insight Group | All Rights Reserved
+                </span>
+            </div>
+        </footer>
+    </div>
+    <script src="./senate-data.js"></script>
+    <script src="./house-data.js"></script>
+    <script src="./statistics.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

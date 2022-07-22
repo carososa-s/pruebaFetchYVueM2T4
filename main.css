@@ -1,0 +1,71 @@
+@font-face {
+    font-family: Mali;
+    src: url(./assets/fonts/Malibold.ttf);
+}
+
+@font-face {
+    font-family: zillas;
+    src: url(./assets/fonts/ZillaSlab-Regular.ttf);
+}
+
+.main {
+    font-family: zillas;
+
+}
+
+.footer,
+.header {
+    font-family: mali;
+    font-weight: bolder;
+   
+}
+
+.space-navbar {
+    height: 60px;
+    background-color: black;
+}
+
+.spacing {
+        letter-spacing: -1px; 
+}
+
+.bg-green {
+    background-color: white!important;
+    border: 3px solid rgb(98, 158, 0)!important;
+}
+
+.bg-green-two {
+     background-color: rgb(98, 158, 0)!important;
+     border: 3px solid rgb(98, 158, 0)!important;
+ }
+
+.bg-white {
+    background-color: white!important;
+}
+
+.font-green {
+    color: rgb(98, 158, 0)!important;
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.table-group-divider {
+    border-top: white!important;
+}
+
+.text-justify {
+    text-align: justify;
+}
+.table-col {
+    width: 24%
+}
+.table-cols {
+    width: 19%;
+}
+
+th {
+    background-color: rgb(98, 158, 0)!important;
+}

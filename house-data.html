@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>House</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="./main.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-xl">
+        <!-- navbar -->
+        <header class="header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top pt-2 pb-1">
+                <div class="container-fluid d-flex  flex-lg-column align-items-start">
+                    <div class="navbar-brand col-lg-12 d-flex flex-row justify-content-between">
+                        <div class="spacing d-flex align-items-center">
+                            <img class="img-fluid" src="./assets/img/icon2.png" width="50" alt="icon">
+                            <span class="h3">Data Insight Group</span>
+                        </div>
+                        <p class="d-none d-lg-block text-info"><a class="nav-link font-green"
+                                href="mailto:info@datainsightgroup.net"><img src="./assets/img/icon-mail.png"
+                                    alt="mail-icon" width="25" class="img-fluid me-2" />info@datainsightgroup.net</a>
+                        </p>
+                    </div>
+                    <button class="navbar-toggler bg-green" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="bg-green collapse bg-success navbar-collapse border rounded border-2 border-success col-lg-12"
+                        id="navbarTogglerDemo02" style="--bs-bg-opacity: .5;">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex p-1">
+                            <li class="nav-item">
+                                <a class="nav-link lead" aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Congress 113
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item active" href="#">House</a></li>
+                                    <li><a class="dropdown-item" href="./senate-data.html">Senate</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Attendance
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="./house-attendance.html">House</a></li>
+                                    <li><a class="dropdown-item" href="./senate-attendance.html">Senate</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Party Loyalty
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="./house-party.html">House</a></li>
+                                    <li><a class="dropdown-item" href="./senate-party.html">Senate</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item d-lg-none">
+                                <a class="nav-link" href="#">info@datainsightgroup.net</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- space navbar -->
+            <div class="space-navbar">
+            </div>
+        </header>
+        <!-- main -->
+        <main class="main mb-5 pb-1 pb-lg-0">
+            <div class="container-fluid text-center text-lg-start mt-3 mt-lg-5 pt-lg-2 mb-5 mb-lg-0">
+                <h4 class="bold px-lg-3 pt-lg-3">Congressmen</h4>
+                <p class="px-lg-3 pt-lg-0 mb-1 mt-1">The major power of the House is to pass federal legislation that
+                    affects the entire country, although
+                    its bills must also be passed by the Senate and further agreed to by the U.S. President before
+                    becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in
+                    each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach
+                    officials (impeached officials are subsequently tried in the Senate), and to elect the U.S.
+                    President in case there is no majority in the Electoral College.</p>
+                <p class="px-lg-3">Each U.S. state is represented in the House in proportion to its population as
+                    measured in the
+                    census, but every state is entitled to at least one representative. </p>
+                <form class="d-lg-flex flex-nowrap justify-content-center">
+                    <div class="input-group mb-2" id="checkboxesHouse">
+                        <span class="input-group-text bold border border-secondary bg-green-two">Party</span>
+                        <div class="input-group-text bold">
+                            <label for="democrat" class="bold">D</label>
+                            <input class="form-check-input ms-2 mb-1" type="checkbox" value="D"
+                                aria-label="Checkbox for following text input" id="democrat">
+                        </div>
+                        <div class="input-group-text bold">
+                            <label for="republican">R</label>
+                            <input class="form-check-input ms-2 mb-1" type="checkbox" value="R"
+                                aria-label="Checkbox for following text input" id="republican">
+                        </div>
+                        <div class="input-group-text bold">
+                            <label for="independent">ID</label>
+                            <input class="form-check-input ms-2 mb-1" type="checkbox" value="ID"
+                                aria-label="Checkbox for following text input" id="independent">
+                        </div>
+                    </div>
+                    <div id="selectHouse" class="input-group mb-2">
+                        <span class="input-group-text border border-secondary bg-green-two bold">State</span>
+                        <select class="form-select bold" id="selectH">
+                            <option value="States" selected>All states</option>
+                            <option value="HI">HI</option>
+                            <option value="NY">NY</option>
+                            <option value="AR">AR</option>
+                            <option value="CO">CO</option>
+                            <option value="VA">VA</option>
+                            <option value="CA">CA</option>
+                            <option value="ME">ME</option>
+                            <option value="TX">TX</option>
+                            <option value="NJ">NJ</option>
+                            <option value="IL">IL</option>
+                            <option value="OH">OH</option>
+                            <option value="WI">WI</option>
+                            <option value="MA">MA</option>
+                            <option value="OR">OR</option>
+                            <option value="FL">FL</option>
+                            <option value="LA">LA</option>
+                            <option value="NC">NC</option>
+                            <option value="GA">GA</option>
+                            <option value="NE">NE</option>
+                            <option value="AL">AL</option>
+                            <option value="NV">NV</option>
+                            <option value="PA">PA</option>
+                            <option value="GU">GU</option>
+                            <option value="MI">MI</option>
+                            <option value="OK">OK</option>
+                            <option value="KY">KY</option>
+                            <option value="MD">MD</option>
+                            <option value="AL">AL</option>
+                            <option value="DE">DE</option>
+                            <option value="WA">WA</option>
+                            <option value="TN">TN</option>
+                            <option value="NC">NC</option>
+                            <option value="PR">PR</option>
+                            <option value="VI">VI</option>
+                            <option value="CT">CT</option>
+                            <option value="SC">SC</option>
+                            <option value="ND">ND</option>
+                            <option value="MS">MS</option>
+                            <option value="AS">AS</option>
+                            <option value="IN">IN</option>
+                            <option value="AZ">AZ</option>
+                            <option value="IA">IA</option>
+                            <option value="RI">RI</option>
+                            <option value="MT">MT</option>
+                            <option value="KS">KS</option>
+                            <option value="NM">NM</option>
+                            <option value="WV">WV</option>
+                            <option value="ID">ID</option>
+                            <option value="MO">MO</option>
+                            <option value="NH">NH</option>
+                            <option value="VT">VT</option>
+                        </select>
+                    </div>
+                </form>
+                <!-- table -->
+                <div class="table-responsive-lg">
+                    <table class="table table-dark table-hover align-middle table-borderless mb-0" id="house-data">
+                        <caption class="pb-1 text-center text-dark bold" id="caption"></caption>
+                        <colgroup>
+                            <col span="1" class="table-col">
+                            <col span="4" class="table-cols">
+                        </colgroup>
+                        <thead class="table-dark table-group-divider text-center text-dark">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Party</th>
+                                <th scope="col">State</th>
+                                <th scope="col">Years in Office</th>
+                                <th scope="col">% Votes w/ Party</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider text-center">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-center" id="go-to-top"><a class="btn btn-primary bg-green-two mb-4" href="#" role="button">Go to Top</a></div>
+            </div>
+        </main>
+        <!-- footer -->
+        <footer class="footer fixed-bottom container-fluid bg-white p-2 pe-3 bg-white pt-1">
+            <div
+                class="container-fluid mx-1 text-center bg-green border rounded d-flex justify-content-center align-items-center p-2">
+                <span class="lead">
+                    Ⓒ 2022 Data Insight Group | All Rights Reserved
+                </span>
+            </div>
+        </footer>
+    </div>
+    <script src="./senate-data.js"></script>
+    <script src="./house-data.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
