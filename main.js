@@ -13,27 +13,46 @@ let select = " ";
 const urlHouse = "https://api.propublica.org/congress/v1/117/house/members.json";
 const urlSenate = "https://api.propublica.org/congress/v1/117/senate/members.json";
 const options = {
-method: "GET",
-headers : {
-  "X-API-Key" : "IQjTDD8UFLjZoGY0vmbNKlh6mmSykBT3NzYKz7aP"
+  method: "GET",
+  headers: {
+    "X-API-Key": "IQjTDD8UFLjZoGY0vmbNKlh6mmSykBT3NzYKz7aP"
+  }
 }
+let copiaHouse;
+let copiaSenate;
+
+
+
+getDataAndPrint(urlHouse, options);
+getDataAndPrint(urlSenate, options);
+
+async function getDataAndPrint(url, option) {
+  await fetch(url, option)
+    .then(res => res.json())
+    .then(datos => {
+      if(url = urlHouse) {
+        copiaHouse = Array.from(datos.results[0].members);
+        console.log(copiaHouse);
+      } else if (url = urlSenate) {
+        copiaSenate = Array.from(datos.results[0].members);
+        console.log(copiaSenate);
+      }
+     
+    }) 
+    .catch(error => console.log(error));
+  if (document.title === "Senate") {
+    printTable(copiaSenate, tableSenate);
+    listenerCheck(copiaSenate, tableSenate, checkboxesSenate);
+    listenerSelect(copiaSenate, tableSenate, selectSenate);
+  } else if (document.title === "House") {
+    printTable(copiaHouse, tableHouse);
+    listenerCheck(copiaHouse, tableHouse, checkboxesHouse);
+    listenerSelect(copiaHouse, tableHouse, selectHouse);
+  };
 }
 
-fetch(urlHouse,options)
-function getData() {
 
-}
-//imprime la tabla en la página que corresponda
-// if (document.title === "Senate") {
-//   printTable(copiaSenate, tableSenate);
-//   listenerCheck(copiaSenate, tableSenate, checkboxesSenate);
-//   listenerSelect(copiaSenate, tableSenate, selectSenate);
 
-// } else if (document.title === "House") {
-//   printTable(copiaHouse, tableHouse);
-//   listenerCheck(copiaHouse, tableHouse, checkboxesHouse);
-//   listenerSelect(copiaHouse, tableHouse, selectHouse);
-// };
 
 function printTable(members, table) {
   if (members.length === 0) {
