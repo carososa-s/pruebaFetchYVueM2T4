@@ -1,45 +1,86 @@
-let statistics = {
-    D: "Democrats",
-    R: "Republicans",
-    ID: "Independents",
-    AllMembers: "Total",
-    numberOfAllMembers: 0,
-    numberOfD: 0,
-    numberOfR: 0,
-    numberOfID: 0,
-    votesAllMembers: 0,
-    votesD: 0,
-    votesR: 0,
-    votesID: 0,
-    lessLoyal: [],
-    mostLoyal: [],
-    mostEngaged: [],
-    lessEngaged: [],
+let urlChamber = "https://api.propublica.org/congress/v1/117/house/members.json";
+
+// let urlChamber;
+// if (document.title == "Attendance: House") {
+//     urlChamber = "https://api.propublica.org/congress/v1/117/house/members.json"
+// }
+// if (document.title == "Senate") {
+//     urlChamber = "https://api.propublica.org/congress/v1/117/senate/members.json"
+// }
+
+const options = {
+    method: "GET",
+    headers: {
+        "X-API-Key": "IQjTDD8UFLjZoGY0vmbNKlh6mmSykBT3NzYKz7aP"
+    }
 }
 
-const membersSenate = Array.from(senate.results[0].members);
-const membersHouse = Array.from(house.results[0].members);
-let tableOne = document.querySelector("#table-one");
-let tableLessLoyal = document.querySelector("#table-less-loyal");
-let tableMostLoyal = document.querySelector("#table-most-loyal");
-let tableLessEngaged = document.querySelector("#table-less-engaged");
-let tableMostEngaged = document.querySelector("#table-most-engaged");
-let party = [];
+const { createApp } = Vue
 
-printAllTables("Attedance: Senate","Party Loyalty: Senate", membersSenate);
-printAllTables("Attendance: House","Party Loyalty: House", membersHouse);
+createApp({
+    data() {
+        return {
+            lessEngaged: [],
+            memberChamber: [],
+            statistics: {
+                D: "Democrats",
+                R: "Republicans",
+                ID: "Independents",
+                AllMembers: "Total",
+                numberOfAllMembers: 0,
+                numberOfD: 0,
+                numberOfR: 0,
+                numberOfID: 0,
+                votesAllMembers: 0,
+                votesD: 0,
+                votesR: 0,
+                votesID: 0,
+                lessLoyal: [],
+                mostLoyal: [],
+                mostEngaged: [],
+                
+            }
+        }
+    },
+    methods: {
+        filter: function () {
+            this.lessEngaged = this.memberChamber.filter(member => member.missed_votes_pct >= 70)
+
+        }
+    },
+    created() {
+        fetch(urlChamber, options)
+            .then(res => res.json())
+            .then(datos => {
+                this.memberChamber = Array.from(datos.results[0].members);
+                // this.statistics.lessEngaged = Array.from(datos.results[0].members);
+                // this.statistics.mostEngaged = Array.from(datos.results[0].members);
+                // this.statistics.lessLoyal = Array.from(datos.results[0].members);
+                // this.statistics.mostLoyal = Array.from(datos.results[0].members);
+                
+            })
+            .catch(error => console.log(error));
+        // this.statistics.lessLoyal = this.filter("votes_with_party_pct", true);
+        // this.statistics.mostLoyal = this.filter("votes_with_party_pct", false);
+        // this.statistics.mostEngaged = this.filter("missed_votes_pct", true);
+        this.filter("missed_votes_pct", true);
+        console.log(this.lessEngaged)
+    }
+
+}).mount('#mainTwo');
+
 
 //Imprime las tablas correspondientes a cada chamber
 function printAllTables(documentTitleOne, documentTitleTwo, chamber) {
     if (document.title === documentTitleOne || document.title === documentTitleTwo) {
-            party = partys(chamber);
-            makeStatistics(party, chamber);
-            tableGlance(tableOne, party);
-            printMembers("lessLoyal", "loyal", tableLessLoyal);
-            printMembers("mostLoyal", "loyal", tableMostLoyal);
-            printMembers("lessEngaged", "engaged", tableLessEngaged);
-            printMembers("mostEngaged", "engaged", tableMostEngaged);
-        } 
+        party = partys(chamber);
+        makeStatistics(party, chamber);
+        tableGlance(tableOne, party);
+        printMembers("lessLoyal", "loyal", tableLessLoyal);
+        printMembers("mostLoyal", "loyal", tableMostLoyal);
+        printMembers("lessEngaged", "engaged", tableLessEngaged);
+        printMembers("mostEngaged", "engaged", tableMostEngaged);
+    }
 }
 
 //Crea los valores pedidos de estadisticas
@@ -51,7 +92,7 @@ function makeStatistics(partys, members) {
     }
     statistics.lessLoyal = pctVotes(members, "votes_with_party_pct", true);
     statistics.mostLoyal = pctVotes(members, "votes_with_party_pct", false);
-    statistics.mostEngaged = pctVotes(members, "missed_votes_pct",true);
+    statistics.mostEngaged = pctVotes(members, "missed_votes_pct", true);
     statistics.lessEngaged = pctVotes(members, "missed_votes_pct", false);
 }
 
@@ -151,4 +192,4 @@ function pctVotes(members, typeOfVotes, boolean) {
         return sorted.filter(member => member[typeOfVotes] >= reference);
     }
 }
- 
+

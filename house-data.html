@@ -111,7 +111,7 @@
                             <input class="form-check-input ms-2 mb-1" type="checkbox" value="ID"
                                 aria-label="Checkbox for following text input" id="independent" v-model="checkboxes">
                         </div>
-                        <span>Checked: {{checkboxes}}</span>
+            
                     </div>
                     <div id="selectHouse" class="input-group mb-2">
                         <span class="input-group-text border border-secondary bg-green-two bold">State</span>
@@ -169,7 +169,7 @@
                             <option value="NH">NH</option>
                             <option value="VT">VT</option>
                         </select>
-                        <span>{{select}}</span>
+                      
                     </div>
                 </form>
                 <!-- table -->
@@ -190,6 +190,7 @@
                             </tr>
                         </thead>
                         <tbody id="table-house" v-for="member in filtered" class="table-group-divider text-center">
+                            {{filter}}
                             <tr>
                                 <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
                                 <td>{{member.party}}</td>
