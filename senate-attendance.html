@@ -80,7 +80,7 @@
             </div>
         </header>
         <!-- main -->
-        <main class="main mb-lg-5 pb-lg-0 mb-5 pb-5 mt-lg-5 mt-3 pt-lg-2">
+        <main class="main mb-lg-5 pb-lg-0 mb-5 pb-5 mt-lg-5 mt-3 pt-lg-2" id="mainTwo">
             <div class="container-fluid row  mx-0">
                 <div class="container-fluid col-lg-8 text-center text-lg-start pt-lg-4">
                     <h2>Attendance</h2>
@@ -111,6 +111,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>{{statistics.D}}</td>
+                                <td>{{statistics.numberOfD}}</td>
+                                <td>{{statistics.votesD}} {{"%"}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{statistics.R}}</td>
+                                <td>{{statistics.numberOfR}}</td>
+                                <td>{{statistics.votesR}} {{"%"}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{statistics.ID}}</td>
+                                <td>{{statistics.numberOfID}}</td>
+                                <td>{{statistics.votesID}} {{"%"}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{statistics.AllMembers}}</td>
+                                <td>{{statistics.numberOfAllMembers}}</td>
+                                <td>{{statistics.votesAllMembers}} {{"%"}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -126,8 +146,12 @@
                                 <th>%Missed</th>
                             </tr>
                         </thead>
-                        <tbody>
-
+                        <tbody v-for="member in statistics.lessEngaged">
+                            <tr>
+                                <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
+                                <td>{{member.missed_votes}}</td>
+                                <td>{{member.missed_votes_pct}} {{"%"}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -141,8 +165,12 @@
                                 <th>%Missed</th>
                             </tr>
                         </thead>
-                        <tbody>
-
+                        <tbody v-for="member in statistics.mostEngaged">
+                            <tr>
+                                <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
+                                <td>{{member.missed_votes}}</td>
+                                <td>{{member.missed_votes_pct}} {{"%"}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -161,8 +189,7 @@
             </div>
         </footer>
     </div>
-    <script src="./senate-data.js"></script>
-    <script src="./house-data.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
     <script src="./statistics.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

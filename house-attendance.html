@@ -59,8 +59,8 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdownThree" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdownThree"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Party Loyalty
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -101,7 +101,7 @@
                         may (if present) cast the tiebreaking vote.</p>
                 </div>
                 <div class="table-responsive col-lg-4 pt-lg-4">
-                    <h4 class="text-lg-end text-center">Senate at a glance</h4>
+                    <h4 class="text-lg-end text-center">House at a glance</h4>
                     <table class="table table-dark text-center" id="table-one">
                         <thead>
                             <tr>
@@ -111,7 +111,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr></tr>
+                            <tr>
+                                <td>{{statistics.D}}</td>
+                                <td>{{statistics.numberOfD}}</td>
+                                <td>{{statistics.votesD}} {{"%"}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{statistics.R}}</td>
+                                <td>{{statistics.numberOfR}}</td>
+                                <td>{{statistics.votesR}} {{"%"}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{statistics.ID}}</td>
+                                <td>{{statistics.numberOfID}}</td>
+                                <td>{{statistics.votesID}} {{"%"}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{statistics.AllMembers}}</td>
+                                <td>{{statistics.numberOfAllMembers}}</td>
+                                <td>{{statistics.votesAllMembers}} {{"%"}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -127,11 +146,11 @@
                                 <th>%Missed</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr v-for="member in statistics.lessEngaged">
+                        <tbody v-for="member in statistics.lessEngaged">
+                            <tr>
                                 <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
                                 <td>{{member.missed_votes}}</td>
-                                <td>{{member.missed_votes_pct}}</td>
+                                <td>{{member.missed_votes_pct}} {{"%"}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -150,10 +169,10 @@
                             <tr>
                                 <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
                                 <td>{{member.missed_votes}}</td>
-                                <td>{{member.missed_votes_pct}}</td>
+                                <td>{{member.missed_votes_pct}} {{"%"}}</td>
                             </tr>
                         </tbody>
-                        
+
                     </table>
                 </div>
                 <div class="d-flex justify-content-center d-lg-none">
