@@ -80,6 +80,7 @@
         </header>
         <!-- main -->
         <main class="main mb-5 pb-1 pb-lg-0" id="main">
+            {{filterByParty}}
             <div class="container-fluid text-center text-lg-start mt-3 mt-lg-5 mb-5 mb-lg-0 pt-lg-2">
                 <h4 class="bold px-lg-3 pt-lg-3">Senators</h4>
                 <p class="px-lg-3 pt-lg-0 mt-1">First convened in 1789, the composition and powers of the Senate are
@@ -92,7 +93,6 @@
                     as trial of federal officials impeached by the House.</p>
                 <!-- form -->
                 <form class="d-lg-flex flex-nowrap justify-content-center">
-                    {{filterByParty}}
                     <div class="input-group mb-2" id="checkboxesSenate">
                         <span class="input-group-text bold border border-secondary bg-green-two">Party</span>
                         <div class="input-group-text bold">
@@ -186,7 +186,7 @@
                                 <th scope="col">% Votes w/ Party</th>
                             </tr>
                         </thead>
-                        <tbody id="table-senate" v-for="member in filtered"  class="table-group-divider text-center">
+                        <tbody id="table-senate" v-for="member in filteredMembers"  class="table-group-divider text-center">
                             <tr>
                                 <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
                                 <td>{{member.party}}</td>
@@ -211,8 +211,7 @@
             </div>
         </footer>
     </div>
-    <!-- <script src="./senate-data.js"></script>
-    <script src="./house-data.js"></script> -->
+
     <script src="https://unpkg.com/vue@3"></script>
     <script src="./main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

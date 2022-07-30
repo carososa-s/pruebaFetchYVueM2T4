@@ -111,7 +111,7 @@
                             <input class="form-check-input ms-2 mb-1" type="checkbox" value="ID"
                                 aria-label="Checkbox for following text input" id="independent" v-model="checkboxes">
                         </div>
-            
+
                     </div>
                     <div id="selectHouse" class="input-group mb-2">
                         <span class="input-group-text border border-secondary bg-green-two bold">State</span>
@@ -169,7 +169,7 @@
                             <option value="NH">NH</option>
                             <option value="VT">VT</option>
                         </select>
-                      
+
                     </div>
                 </form>
                 <!-- table -->
@@ -189,8 +189,7 @@
                                 <th scope="col">% Votes w/ Party</th>
                             </tr>
                         </thead>
-                        <tbody id="table-house" v-for="member in filtered" class="table-group-divider text-center">
-                            {{filter}}
+                        <tbody id="table-house" v-for="member in filteredMembers" class="table-group-divider text-center">
                             <tr>
                                 <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
                                 <td>{{member.party}}</td>
@@ -198,11 +197,12 @@
                                 <td>{{member.seniority}}</td>
                                 <td>{{"%"}}{{member.votes_with_party_pct}}</td>
                             </tr>
-                            
+
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center" id="go-to-top"><a class="btn btn-primary bg-green-two mb-4" href="#" role="button">Go to Top</a></div>
+                <div class="d-flex justify-content-center" id="go-to-top"><a class="btn btn-primary bg-green-two mb-4"
+                        href="#" role="button">Go to Top</a></div>
             </div>
         </main>
         <!-- footer -->
@@ -215,7 +215,7 @@
             </div>
         </footer>
     </div>
-     <script src="./senate-data.js"></script>
+    <script src="./senate-data.js"></script>
     <script src="./house-data.js"></script>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="./main.js"></script>
