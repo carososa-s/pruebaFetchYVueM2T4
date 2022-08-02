@@ -8,14 +8,19 @@
     src: url(./assets/fonts/ZillaSlab-Regular.ttf);
 }
 
+@font-face {
+    font-family: pontano;
+    src: url(./assets/fonts/Exo2.ttf);
+}
+
 .main {
-    font-family: zillas;
+    font-family: pontano;
 
 }
 
 .footer,
 .header {
-    font-family: mali;
+    font-family: pontano;
     font-weight: bolder;
    
 }
@@ -30,8 +35,8 @@
 }
 
 .bg-green {
-    background-color: white!important;
-    border: 3px solid rgb(98, 158, 0)!important;
+    background-color: rgb(10, 10, 10)!important;
+
 }
 
 .bg-green-two {
@@ -68,4 +73,19 @@
 
 th {
     background-color: rgb(98, 158, 0)!important;
+}
+
+.nav-item > a:hover {
+    color: white!important;
+    transition: 0.5s;
+}
+
+.dropdown-menu a:hover {
+    color: rgb(98, 158, 0)!important;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transition:none 1s ease-in-out 1s;
+    transform: rotate(10deg);
 }

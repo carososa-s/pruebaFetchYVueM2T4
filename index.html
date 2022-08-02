@@ -14,15 +14,15 @@
     <div class="container-xl p-0 ">
         <!-- navbar -->
         <header class="header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top pt-2 pb-0">
-                <div class="container-fluid d-flex flex-lg-column justify-content-between align-items-start ">
-                    <div class="navbar-brand col-lg-12 d-flex flex-row justify-content-between">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top pt-0 px-0 pb-0 m-0">
+                <div class="container-fluid p-0 d-flex flex-lg-column justify-content-between align-items-start ">
+                    <div class="navbar-brand col-lg-12 d-flex flex-row justify-content-between px-2 pb-2">
                         <div class="spacing d-flex align-items-center">
-                            <img class="img-fluid" src="./assets/img/icon2.png" width="50" alt="icon">
-                            <span class="h3">Data Insight Group</span>
+                            <img class="img-fluid logo" src="./assets/img/icon2.png" width="40" alt="icon">
+                            <span class="h1 align-self-center m-0 ms-1 bold">Data Insight Group</span>
 
                         </div>
-                        <p class="d-none d-lg-block text-info pt-2"><a class="nav-link font-green"
+                        <p class="d-none d-lg-block text-info pt-2 m-0"><a class="nav-link font-green m-0"
                                 href="mailto:info@datainsightgroup.net"><img src="./assets/img/icon-mail.png"
                                     alt="mail-icon" width="25" class="img-fluid me-2" />info@datainsightgroup.net</a>
                         </p>
@@ -32,14 +32,14 @@
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="bg-green rounded collapse navbar-collapse border border-2 border-dark col-lg-12"
+                    <div class="bg-green collapse navbar-collapse border-dark col-lg-12 mx-0"
                         id="navbarTogglerDemo02">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex p-1">
-                            <li class="nav-item">
-                                <a class="nav-link active lead" aria-current="page" href="#">Home</a>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex ps-2">
+                            <li class="nav-item me-1">
+                                <a class="nav-link active lead font-green" aria-current="page" href="#">Home</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                            <li class="nav-item dropdown me-1">
+                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Congress 113
                                 </a>
@@ -48,8 +48,8 @@
                                     <li><a class="dropdown-item" href="./senate-data.html">Senate</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                            <li class="nav-item dropdown me-1">
+                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Attendance
                                 </a>
@@ -58,8 +58,8 @@
                                     <li><a class="dropdown-item" href="./senate-attendance.html">Senate</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                            <li class="nav-item dropdown me-1">
+                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Party Loyalty
                                 </a>
@@ -69,7 +69,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item d-lg-none">
-                                <a class="nav-link" href="#">info@datainsightgroup.net</a>
+                                <a class="nav-link font-green" href="#">info@datainsightgroup.net</a>
                             </li>
                         </ul>
                     </div>
@@ -128,7 +128,7 @@
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header text-start ps-0" id="flush-headingOne">
-                            <button class="font-green bold mt-2 mx-0 p-2 px-0 accordion-button collapsed text-info" type="button"
+                            <button class="font-green bold mt-2 p-2 px-0 accordion-button collapsed text-info" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
                                 aria-controls="flush-collapseOne">
                                 Read More
@@ -191,18 +191,15 @@
             </div>
         </main>
         <!-- footer -->
-        <footer class="footer fixed-bottom p-2 pe-3 bg-white pt-0">
+        <footer class="footer fixed-bottom bg-white pt-0">
             <div
-                class="bg-green mx-1 rounded container-fluid text-center border border-2 border-dark d-flex justify-content-center align-items-center p-2">
-                <span class="lead">
+                class="bg-green  container-fluid text-center d-flex justify-content-center align-items-center p-2">
+                <span class="font-green">
                     Ⓒ 2022 Data Insight Group | All Rights Reserved
                 </span>
             </div>
         </footer>
     </div>
-    <script src="./senate-data.js"></script>
-    <script src="./house-data.js"></script>
-    <script src="./main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>

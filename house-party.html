@@ -14,15 +14,15 @@
     <div class="container-xl p-0 ">
         <!-- navbar -->
         <header class="header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top pt-2 pb-1">
-                <div class="container-fluid d-flex flex-lg-column justify-content-between align-items-start ">
-                    <div class="navbar-brand col-lg-12 d-flex flex-row justify-content-between">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top pt-0 px-0 pb-0 m-0">
+                <div class="container-fluid p-0 d-flex flex-lg-column justify-content-between align-items-start ">
+                    <div class="navbar-brand col-lg-12 d-flex flex-row justify-content-between px-2 pb-2">
                         <div class="spacing d-flex align-items-center">
-                            <img class="img-fluid" src="./assets/img/icon2.png" width="50" alt="icon">
-                            <span class="h3">Data Insight Group</span>
+                            <img class="img-fluid logo" src="./assets/img/icon2.png" width="40" alt="icon">
+                            <span class="h1 align-self-center m-0 ms-1 bold">Data Insight Group</span>
 
                         </div>
-                        <p class="d-none d-lg-block text-info pt-2"><a class="nav-link font-green"
+                        <p class="d-none d-lg-block text-info pt-2 m-0"><a class="nav-link font-green m-0"
                                 href="mailto:info@datainsightgroup.net"><img src="./assets/img/icon-mail.png"
                                     alt="mail-icon" width="25" class="img-fluid me-2" />info@datainsightgroup.net</a>
                         </p>
@@ -32,15 +32,14 @@
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="bg-green rounded collapse navbar-collapse border border-2 border-dark col-lg-12"
-                        id="navbarTogglerDemo02">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex p-1">
-                            <li class="nav-item">
-                                <a class="nav-link lead" aria-current="page" href="./index.html">Home</a>
+                    <div class="bg-green collapse navbar-collapse border-dark col-lg-12 mx-0" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex ps-2">
+                            <li class="nav-item me-1">
+                                <a class="nav-link active lead font-green" aria-current="page" href="#">Home</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                            <li class="nav-item dropdown me-1">
+                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Congress 113
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -48,8 +47,8 @@
                                     <li><a class="dropdown-item" href="./senate-data.html">Senate</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdownTwo"
+                            <li class="nav-item dropdown me-1">
+                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Attendance
                                 </a>
@@ -58,18 +57,18 @@
                                     <li><a class="dropdown-item" href="./senate-attendance.html">Senate</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdownThree"
+                            <li class="nav-item dropdown me-1">
+                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Party Loyalty
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdownThree">
-                                    <li><a class="dropdown-item active" href="#">House</a></li>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="./house-party.html">House</a></li>
                                     <li><a class="dropdown-item" href="./senate-party.html">Senate</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item d-lg-none">
-                                <a class="nav-link" href="#">info@datainsightgroup.net</a>
+                                <a class="nav-link font-green" href="#">info@datainsightgroup.net</a>
                             </li>
                         </ul>
                     </div>
@@ -99,26 +98,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>{{statistics.D}}</td>
-                                <td>{{statistics.numberOfD}}</td>
-                                <td>{{statistics.votesD}}  {{"%"}}</td>
-                            </tr>
-                            <tr>
-                                <td>{{statistics.R}}</td>
-                                <td>{{statistics.numberOfR}}</td>
-                                <td>{{statistics.votesR}} {{"%"}}</td>
-                            </tr>
-                            <tr>
-                                <td>{{statistics.ID}}</td>
-                                <td>{{statistics.numberOfID}}</td>
-                                <td>{{statistics.votesID}} {{"%"}}</td>
-                            </tr>
-                            <tr>
-                                <td>{{statistics.AllMembers}}</td>
-                                <td>{{statistics.numberOfAllMembers}}</td>
-                                <td>{{statistics.votesAllMembers}} {{"%"}}</td>
-                            </tr>
+                            <template v-if="memberChamber.length == 0">
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="spinner-border" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                            <template v-else>
+                                <tr>
+                                    <td>{{statistics.D}}</td>
+                                    <td>{{statistics.numberOfD}}</td>
+                                    <td>{{statistics.votesD}} {{"%"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{statistics.R}}</td>
+                                    <td>{{statistics.numberOfR}}</td>
+                                    <td>{{statistics.votesR}} {{"%"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{statistics.ID}}</td>
+                                    <td>{{statistics.numberOfID}}</td>
+                                    <td>{{statistics.votesID}} {{"%"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{statistics.AllMembers}}</td>
+                                    <td>{{statistics.numberOfAllMembers}}</td>
+                                    <td>{{statistics.votesAllMembers}} {{"%"}}</td>
+                                </tr>
+                            </template>
                         </tbody>
                     </table>
                 </div>
@@ -134,12 +146,25 @@
                                 <th>% Party Votes</th>
                             </tr>
                         </thead>
-                        <tbody v-for="member in statistics.lessLoyal">
-                            <tr>
-                                <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
-                                <td>{{member.total_votes}}</td>
-                                <td>{{member.votes_with_party_pct}} {{"%"}}</td>
-                            </tr>
+                        <tbody>
+                            <template v-if="memberChamber.length == 0">
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="spinner-border" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                            <template v-else v-for="member in statistics.lessLoyal">
+                                <tr>
+                                    <td><a v-bind:href="member.url" class="font-green">{{member.first_name}} {{member.middle_name}} {{member.last_name}}</a></td>
+                                    <td>{{member.total_votes}}</td>
+                                    <td>{{member.votes_with_party_pct}} {{"%"}}</td>
+                                </tr>
+                            </template>
                         </tbody>
                     </table>
                 </div>
@@ -153,12 +178,25 @@
                                 <th>%Party Votes</th>
                             </tr>
                         </thead>
-                        <tbody v-for="member in statistics.mostLoyal">
-                            <tr>
-                                <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
-                                <td>{{member.total_votes}}</td>
-                                <td>{{member.votes_with_party_pct}} {{"%"}}</td>
-                            </tr>
+                        <tbody>
+                            <template v-if="memberChamber.length == 0">
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="spinner-border" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                            <template v-else v-for="member in statistics.mostLoyal">
+                                <tr>
+                                    <td><a v-bind:href="member.url" class="font-green">{{member.first_name}} {{member.middle_name}} {{member.last_name}}</a></td>
+                                    <td>{{member.total_votes}}</td>
+                                    <td>{{member.votes_with_party_pct}} {{"%"}}</td>
+                                </tr>
+                            </template>
                         </tbody>
                     </table>
                 </div>
@@ -168,10 +206,10 @@
             </div>
         </main>
         <!-- footer -->
-        <footer class="footer fixed-bottom p-2 pe-3 bg-white pt-1">
+        <footer class="footer fixed-bottom bg-white pt-0">
             <div
-                class="bg-green mx-1 rounded container-fluid text-center border border-2 border-dark d-flex justify-content-center align-items-center p-2">
-                <span class="lead">
+                class="bg-green  container-fluid text-center d-flex justify-content-center align-items-center p-2">
+                <span class="font-green">
                     Ⓒ 2022 Data Insight Group | All Rights Reserved
                 </span>
             </div>
