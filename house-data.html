@@ -178,7 +178,7 @@
                 <!-- table -->
                 <div class="table-responsive-lg">
 
-                    <table class="table table-dark table-hover align-middle table-borderless mb-1" id="house-data">
+                    <table class="table table-hover table-borderless align-middle table-borderless mb-1" id="house-data">
                         <caption class="pb-1 text-center text-dark bold" id="caption"></caption>
                         <colgroup>
                             <col span="1" class="table-col">
@@ -193,7 +193,7 @@
                                 <th scope="col">% Votes w/ Party</th>
                             </tr>
                         </thead>
-                        <tbody id="table-house" class="table-group-divider text-center">
+                        <tbody id="table-house" class="table-group-divider text-light text-center">
                             <template v-if="memberChamber.length == 0">
                                 <tr>
                                     <td colspan="5">
@@ -224,8 +224,9 @@
             </div>
         </main>
         <!-- footer -->
-        <footer class="footer fixed-bottom bg-white pt-0">
-            <div class="bg-green  container-fluid text-center d-flex justify-content-center align-items-center p-2">
+        <footer class="footer fixed-bottom pt-0">
+            <div
+                class="container-fluid text-center d-flex justify-content-center align-items-center p-2">
                 <span class="font-green">
                     Ⓒ 2022 Data Insight Group | All Rights Reserved
                 </span>

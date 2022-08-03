@@ -90,7 +90,7 @@
                 </div>
                 <div class="table-responsive col-lg-6 pt-lg-4">
                     <h4 class="text-lg-end text-center">Senate at a glance</h4>
-                    <table class="table table-dark text-center" id="table-one">
+                    <table class="table text-center table-borderless" id="table-one">
 
                         <thead>
                             <tr>
@@ -99,7 +99,7 @@
                                 <th>%Voted w/ Party</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-light">
                             <template v-if="memberChamber.length == 0">
                                 <tr>
                                     <td colspan="3">
@@ -140,7 +140,7 @@
             <div class="container-fluid row mx-0">
                 <div class="table-responsive col-lg-6 pt-lg-2">
                     <h4 class="text-lg-end text-center">Least Loyal (Bottom 10% of Party)</h4>
-                    <table class="table table-dark text-center" id="table-less-loyal">
+                    <table class="table text-center table-borderless" id="table-less-loyal">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -148,7 +148,7 @@
                                 <th>% Party Votes</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-light">
                             <template v-if="memberChamber.length == 0">
                                 <tr>
                                     <td colspan="3">
@@ -172,7 +172,7 @@
                 </div>
                 <div class="table-responsive col-lg-6 pt-lg-2">
                     <h4 class="text-lg-end text-center">Most Loyal (Top 10% of Party)</h4>
-                    <table class="table table-dark text-center" id="table-most-loyal">
+                    <table class="table text-center table-borderless" id="table-most-loyal">
 
                         <thead>
                             <tr>
@@ -181,7 +181,7 @@
                                 <th>%Party Votes</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-light">
                             <template v-if="memberChamber.length == 0">
                                 <tr>
                                     <td colspan="3">
@@ -209,9 +209,9 @@
             </div>
         </main>
         <!-- footer -->
-        <footer class="footer fixed-bottom bg-white pt-0">
+        <footer class="footer fixed-bottom pt-0">
             <div
-                class="bg-green  container-fluid text-center d-flex justify-content-center align-items-center p-2">
+                class="container-fluid text-center d-flex justify-content-center align-items-center p-2">
                 <span class="font-green">
                     Ⓒ 2022 Data Insight Group | All Rights Reserved
                 </span>
