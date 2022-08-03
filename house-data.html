@@ -11,23 +11,25 @@
 </head>
 
 <body>
+    
     <div class="container-xl">
         <!-- navbar -->
         <header class="header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top pt-0 px-0 pb-0 m-0">
                 <div class="container-fluid p-0 d-flex flex-lg-column justify-content-between align-items-start ">
-                    <div class="navbar-brand col-lg-12 d-flex flex-row justify-content-between px-2 pb-2">
+                    <div class="navbar-brand col-lg-12 d-flex flex-row justify-content-between px-2 pb-1">
                         <div class="spacing d-flex align-items-center">
-                            <img class="img-fluid logo" src="./assets/img/icon2.png" width="40" alt="icon">
-                            <span class="h1 align-self-center m-0 ms-1 bold">Data Insight Group</span>
+                            <img class="img-fluid logo" src="./assets/img/icon2.png" width="30" alt="icon">
+                            <span class="h3 align-self-center m-0 ms-1 bold">Data Insight Group</span>
 
                         </div>
-                        <p class="d-none d-lg-block text-info pt-2 m-0"><a class="nav-link font-green m-0"
-                                href="mailto:info@datainsightgroup.net"><img src="./assets/img/icon-mail.png"
-                                    alt="mail-icon" width="25" class="img-fluid me-2" />info@datainsightgroup.net</a>
+                        <p class="d-none d-lg-block text-info pt-0 m-0"><a class="nav-link font-green m-0"
+                                href="mailto:info@datainsightgroup.net"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope text-dark me-1 mb-1" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                                  </svg>info@datainsightgroup.net</a>
                         </p>
                     </div>
-                    <button class="navbar-toggler bg-green text-light mt-1" type="button" data-bs-toggle="collapse"
+                    <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -35,34 +37,34 @@
                     <div class="bg-green collapse navbar-collapse border-dark col-lg-12 mx-0" id="navbarTogglerDemo02">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex ps-2">
                             <li class="nav-item me-1">
-                                <a class="nav-link active lead font-green" aria-current="page" href="./index.html">Home</a>
+                                <a class="nav-link lead font-green" aria-current="page" href="./index.html">Home</a>
                             </li>
                             <li class="nav-item dropdown me-1">
-                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown"
+                                <a class="nav-link dropdown-toggle font-green  active" href="#" id="navbarScrollingDropdown1"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Congress 113
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                    <li><a class="dropdown-item" href="./house-data.html">House</a></li>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown1">
+                                    <li><a class="dropdown-item  active" href="#">House</a></li>
                                     <li><a class="dropdown-item" href="./senate-data.html">Senate</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown me-1">
-                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown"
+                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown2"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Attendance
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown2">
                                     <li><a class="dropdown-item" href="./house-attendance.html">House</a></li>
                                     <li><a class="dropdown-item" href="./senate-attendance.html">Senate</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown me-1">
-                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown"
+                                <a class="nav-link dropdown-toggle font-green" href="#" id="navbarScrollingDropdown3"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Party Loyalty
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown3">
                                     <li><a class="dropdown-item" href="./house-party.html">House</a></li>
                                     <li><a class="dropdown-item" href="./senate-party.html">Senate</a></li>
                                 </ul>
@@ -79,21 +81,22 @@
             </div>
         </header>
         <!-- main -->
-        <main class="main mb-5 pb-1 pb-lg-0" id="main">
-            <div class="container-fluid text-center text-lg-start mt-3 mt-lg-5 pt-lg-2 mb-5 mb-lg-0">
-                <h4 class="bold px-lg-3 pt-lg-3">Congressmen</h4>
-                <p class="px-lg-3 pt-lg-0 mb-1 mt-1">The major power of the House is to pass federal legislation that
+        <main class="main mb-4 pb-1 pb-lg-0" id="main">
+            {{filterByParty}}
+            <div class="container-fluid text-center text-lg-start mt-2 mt-lg-4 pt-lg-3 mb-5 mb-lg-0">
+                <h4 class="bold pt-lg-3">Congressmen</h4>
+                <p class=" pt-lg-0 mb-1 mt-1">The major power of the House is to pass federal legislation that
                     affects the entire country, although
                     its bills must also be passed by the Senate and further agreed to by the U.S. President before
                     becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in
                     each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach
                     officials (impeached officials are subsequently tried in the Senate), and to elect the U.S.
                     President in case there is no majority in the Electoral College.</p>
-                <p class="px-lg-3">Each U.S. state is represented in the House in proportion to its population as
+                <p class="">Each U.S. state is represented in the House in proportion to its population as
                     measured in the
                     census, but every state is entitled to at least one representative. </p>
                 <form class="d-lg-flex flex-nowrap justify-content-center">
-                    {{filterByParty}}
+                    
                     <div class="input-group mb-2" id="checkboxesHouse">
                         <span class="input-group-text bold border border-secondary bg-green-two">Party</span>
                         <div class="input-group-text bold">
@@ -175,7 +178,7 @@
                 <!-- table -->
                 <div class="table-responsive-lg">
 
-                    <table class="table table-dark table-hover align-middle table-borderless mb-0" id="house-data">
+                    <table class="table table-dark table-hover align-middle table-borderless mb-1" id="house-data">
                         <caption class="pb-1 text-center text-dark bold" id="caption"></caption>
                         <colgroup>
                             <col span="1" class="table-col">
@@ -209,14 +212,15 @@
                                     <td>{{member.party}}</td>
                                     <td>{{member.state}}</td>
                                     <td>{{member.seniority}}</td>
-                                    <td>{{"%"}}{{member.votes_with_party_pct}}</td>
+                                    <td>{{member.votes_with_party_pct}} {{"%"}}</td>
                                 </tr>
                             </template>
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center" id="go-to-top"><a class="btn btn-primary bg-green-two mb-4"
-                        href="#" role="button">Go to Top</a></div>
+                <template v-if="filteredMembers.length > 15">
+                    <div  class="d-flex justify-content-center" id="go-to-top"><a class="btn btn-primary bg-green-two mb-4" href="#" role="button">Go to Top</a></div>
+                </template>
             </div>
         </main>
         <!-- footer -->
@@ -228,6 +232,7 @@
             </div>
         </footer>
     </div>
+    
     <script src="./senate-data.js"></script>
     <script src="./house-data.js"></script>
     <script src="https://unpkg.com/vue@3"></script>

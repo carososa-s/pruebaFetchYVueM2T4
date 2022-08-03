@@ -12,21 +12,40 @@
     font-family: pontano;
     src: url(./assets/fonts/Exo2.ttf);
 }
+body {
+    background: #C9D6FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-.main {
-    font-family: pontano;
+    
+}
+.accordion-button {
+    background: #C9D6FF!important;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF)!important;  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E2E2E2, #C9D6FF)!important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+.navbar {
+    background-image: linear-gradient( 1.3deg,  rgba(91,117,163,1) 11.4%, rgba(68,98,128,1) 77% );
+    
+
+}
+.main {
+    font-family: pontano;
+ 
+    min-height: 100vh;
+}
+
 
 .footer,
 .header {
     font-family: pontano;
     font-weight: bolder;
-   
+    background-color:gray!important;
 }
 
 .space-navbar {
-    height: 60px;
+    height: 40px;
     background-color: black;
 }
 
@@ -85,7 +104,19 @@ th {
     transition: 0.3s;
 }
 
+.logo{
+    transition:none 5s ease-in-out 5s;
+}
+
 .logo:hover {
-    transition:none 1s ease-in-out 1s;
+   
     transform: rotate(10deg);
+}
+
+.active {
+ /* border-right: 2px solid white!important;
+ border-left: 2px solid white!important; */
+color:rgba(91,117,163,1)!important;
+
+
 }
